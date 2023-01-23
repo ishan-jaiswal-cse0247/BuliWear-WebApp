@@ -1,0 +1,52 @@
+.products {
+  background-color: white;
+  width: 100%;
+}
+
+.product {
+  margin-left: 200px;
+  margin-bottom: 20px;
+  margin-right: 200px;
+  margin-top: 40px;
+  white-space: pre;
+  display: inline-block;
+  justify-content: center;
+}
+.product img {
+  height: 300px;
+  width: 370px;
+  padding: 10px;
+  float: left;
+}
+
+.product p {
+  padding-top: 1px;
+}
+.prodetail {
+  margin-top: 13px;
+  margin-bottom: 13px;
+  padding: 7px;
+  float: right;
+}
+.prodetail a {
+  color: black;
+  text-decoration: none;
+}
+
+.prodetail button {
+  background-color: white;
+  padding: 5px;
+  padding-left: 14px;
+  padding-right: 14px;
+  border-radius: 100px;
+  font-size: 20px;
+}
+.prodetail button:hover {
+  background-color: white;
+  transition: 0.5s;
+  border: none;
+  padding: 5px;
+  padding-left: 14px;
+  padding-right: 14px;
+  font-size: 22px;
+}

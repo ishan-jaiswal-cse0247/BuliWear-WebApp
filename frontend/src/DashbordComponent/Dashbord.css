@@ -1,0 +1,55 @@
+#main1 {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+#main1 p {
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: justify;
+}
+.small-container {
+  width: 30%;
+}
+.hero-button {
+  display: inline-block;
+  border-radius: 17px;
+  background-color: black;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+.hero-button:hover {
+  color: black;
+  background-color: white;
+  transition: 0.7s;
+  padding-bottom: 16px;
+}
+.hero-button span {
+  position: relative;
+  transition: 0.5s;
+}
+
+.hero-button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.hero-button:hover span {
+  padding-right: 25px;
+}
+
+.hero-button:hover span:after {
+  opacity: 1;
+  right: 0;
+}

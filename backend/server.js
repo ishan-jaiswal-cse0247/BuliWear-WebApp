@@ -2,11 +2,18 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import session from 'express-session';
+
 import seedRouter from './routes/seedRoutes.js';
 import productRouter from './routes/productRoutes.js';
 import userRouter from './routes/userRoutes.js';
 
+/*
+import session from 'express-session';
+app.use((req, res, next) => {
+  console.log(req.session);
+  next();
+});
+ */
 dotenv.config();
 
 mongoose
@@ -17,21 +24,17 @@ mongoose
   .catch((err) => {
     console.log(err.message);
   });
-
 const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-app.use((req, res, next) => {
-  console.log(req.session);
-  next();
-});
-
+//app.use('/api/products/create', productRouter);
 app.use('/api/seed', seedRouter);
 app.use('/api/products', productRouter);
 app.use('/api/users', userRouter);
+app.use('/api/contact', userRouter);
 app.use('/api/signup', userRouter);
+app.use('/api/isAdmin', userRouter);
 app.use('/api/name', userRouter);
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });

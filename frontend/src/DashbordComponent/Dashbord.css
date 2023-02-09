@@ -53,3 +53,46 @@
   opacity: 1;
   right: 0;
 }
+
+.hero-button-col {
+  display: inline-block;
+  border-radius: 17px;
+  background-color: black;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  width: 270px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+.hero-button-col:hover {
+  color: black;
+  background-color: white;
+  transition: 0.7s;
+  padding-bottom: 16px;
+}
+.hero-button-col span {
+  position: relative;
+  transition: 0.5s;
+}
+
+.hero-button-col span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.hero-button-col:hover span {
+  padding-right: 25px;
+}
+
+.hero-button-col:hover span:after {
+  opacity: 1;
+  right: 0;
+}

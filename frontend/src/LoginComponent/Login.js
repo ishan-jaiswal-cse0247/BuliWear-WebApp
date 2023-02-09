@@ -33,16 +33,24 @@ function Login() {
     if (data.user) {
       localStorage.setItem('token', data.user);
       //localStorage.setItem('userinfo', JSON.stringify(response));
-      const req = await fetch('/api/users/name', {
+      const name_req = await fetch('/api/users/name', {
         headers: {
           'x-access-token': localStorage.getItem('token'),
         },
       });
-
-      const namedata = await req.json();
+      const isAdmin_req = await fetch('/api/users/isAdmin', {
+        headers: {
+          'x-access-token': localStorage.getItem('token'),
+        },
+      });
+      const admindata = await isAdmin_req.json();
+      const isAdmin = admindata.isAdmin;
+      const namedata = await name_req.json();
       const fname = namedata.name;
       toast.success(`Welcome ${fname}`);
       sessionStorage.setItem('usrname', fname);
+      sessionStorage.setItem('adminstat', isAdmin);
+
       await delay(2000);
       window.location.href = '/';
     } else {
@@ -53,7 +61,7 @@ function Login() {
   return (
     <div id="main1">
       <br />
-      <h1>SignIn</h1>
+      <h1>Sign In</h1>
       <hr />
       <Container className="small-container">
         <Form onSubmit={loginUser}>

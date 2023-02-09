@@ -5,6 +5,7 @@ import './Product.css';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -57,46 +58,33 @@ function Product() {
               <Card>
                 <br />
                 <br />
-                <a href={product.link}>
+                <Link to={`/productdetails/${product.id}`}>
                   <img
                     src={product.image}
                     className="card-img-top"
                     alt={product.name}
                   />
-                </a>
+                </Link>
                 <Card.Body>
                   <div className="prodetail">
                     <p>
-                      <i>{product.brand}</i>
+                      <i>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        {product.brand}
+                      </i>
                     </p>
 
                     <Card.Title>
-                      <a href={product.link}>
+                      <Link to={`/productdetails/${product.id}`}>
                         <b>{product.name}</b>
-                      </a>
+                      </Link>
                     </Card.Title>
-
-                    <p>
-                      <strong>Size:</strong> &nbsp;&nbsp;{product.size}
-                    </p>
-
-                    <p>
-                      <strong>Ideal for:</strong> &nbsp;&nbsp;{product.idealfor}
-                    </p>
-
-                    <p>
-                      <strong>Label Size:</strong> &nbsp;&nbsp;
-                      {product.labelsize}
-                    </p>
-
-                    <p>
-                      <b>&#x20b9;{product.price}</b>
-                    </p>
+                    <br />
 
                     <button>
-                      <a href={product.link}>
-                        <b>Buy</b>
-                      </a>
+                      <Link to={`/productdetails/${product.id}`}>
+                        <b>Details</b>
+                      </Link>
                     </button>
                   </div>
                 </Card.Body>

@@ -18,7 +18,7 @@ import Product from './ProductComponent/Product';
 import Dashbord from './DashbordComponent/Dashbord';
 import Container from 'react-bootstrap/Container';
 import ProductDetails from './ProductDetailsComponent/ProductDetails';
-
+import Buyproduct from './BuyComponent/Buyproduct';
 function App() {
   return (
     <div id="page">
@@ -36,8 +36,9 @@ function App() {
             <Route path="/Register" element={<Register />}></Route>
             <Route path="/Privacy" element={<Privacy />}></Route>
             <Route path="/Dashbord" element={<Dashbord />}></Route>
+            <Route path="/Buyproduct/:id" element={<Buyproduct />}></Route>
             <Route
-              path="/ProductDetail/:id"
+              path="/ProductDetails/:id"
               element={<ProductDetails />}
             ></Route>
             <Route path="/Product" element={<Product />}></Route>

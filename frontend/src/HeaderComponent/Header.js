@@ -46,7 +46,7 @@ function Header() {
             </Nav>
             <Nav className="me-auto">
               <Link to="/contact" className="nav-link">
-                Contact
+                Contact Us
               </Link>
             </Nav>
             <Nav className="me-auto">
@@ -100,7 +100,7 @@ function Header() {
             </Nav>
             <Nav className="me-auto">
               <Link to="/contact" className="nav-link">
-                Contact
+                Contact Us
               </Link>
             </Nav>
             <Nav className="me-auto">

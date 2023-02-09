@@ -44,7 +44,7 @@ function Register() {
   return (
     <div id="main1">
       <br />
-      <h1>SignUp</h1>
+      <h1>Sign Up</h1>
       <hr />
       <Container className="small-container">
         <Form onSubmit={registerUser}>
